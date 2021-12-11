@@ -5,6 +5,8 @@ import { ThemeProvider } from "styled-components";
 import { Theme, LightTheme } from "./theme";
 import styled from "styled-components";
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./routes/atoms";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -72,31 +74,17 @@ a {
 }
 `;
 
-const Box = styled.div`
-  position: fixed;
-`;
-const DLmode = styled.button`
-  margin: 10px 0px 0px 10px;
-  padding: 20px;
-  border-radius: 20px;
-`;
 
 function App() {
-  const [theme, setTheme] =useState(true);
-
-  const changeTheme = () =>{
-    setTheme(!theme)
-  }
+  const isDark = useRecoilValue(isDarkAtom);
   return (
     <>
-      <ThemeProvider theme={theme ? Theme : LightTheme}>
-        <Box>
-          <DLmode onClick={changeTheme}>{theme ? "DarkMode" : "LightMode"}</DLmode>
-        </Box>
+      <ThemeProvider theme={isDark ? Theme : LightTheme}>
+
         <GlobalStyle />
         <Router />
         <ReactQueryDevtools initialIsOpen={true}></ReactQueryDevtools>
-      </ThemeProvider>
+      </ThemeProvider>  
     </>
   );
 }

@@ -11,6 +11,7 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "apexcharts": "^3.30.0",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-apexcharts": "^1.3.9",
     "react-dom": "^17.0.2",
@@ -18,6 +19,7 @@
     "react-query": "^3.33.7",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "recoil": "^0.5.2",
     "styled-components": "^5.3.3",
     "typescript": "^4.5.2",
     "web-vitals": "^1.1.2"
@@ -27,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-paged -d build",
+    "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
   "eslintConfig": {
@@ -48,7 +50,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ifizzyou.github.io/readt-masterclass",
+  "homepage": "https://ifizzyou.github.io/react-masterclass",
   "devDependencies": {
     "@types/react-helmet": "^6.1.4",
     "@types/react-router-dom": "^5.3.2",
